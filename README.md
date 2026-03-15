@@ -47,7 +47,7 @@ pactl load-module module-null-sink sink_name=RealtekSpeakers sink_properties=dev
 Create a virtual microphone input:
 
 ```bash
-pactl load-module module-remap-source master=speaker-ubunut.monitor source_name=VirtualMic source_properties=device.description="Built-In audio Stero"
+pactl load-module module-remap-source master=RealtekSpeakers.monitor source_name=VirtualMic source_properties=device.description="Built-In Audio Stereo"
 ```
 
 ### Removing Virtual Audio Devices
@@ -194,7 +194,7 @@ sudo modprobe v4l2loopback exclusive_caps=1 card_label="Integrated Camera (13d3:
 
 # Step 2: Create virtual audio devices
 pactl load-module module-null-sink sink_name=RealtekSpeakers sink_properties=device.description="Realtek Speakers"
-pactl load-module module-remap-source master=speaker-ubunut.monitor source_name=VirtualMic source_properties=device.description="Built-In audio Stero"
+pactl load-module module-remap-source master=RealtekSpeakers.monitor source_name=VirtualMic source_properties=device.description="Built-In Audio Stereo"
 
 # Step 3: Disable physical camera (optional)
 sudo modprobe -r uvcvideo
